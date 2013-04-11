@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cmd=$1;
+
+proj=$(ti cget Project);
+if [ ! -n "$proj" ]; then
+	echo "Project not found";
+	exit 1;
+fi
+
+if [ "$cmd" == "make" ]; then
+	cd "$proj/src";
+	make
+	cd -
+elif [ "$cmd" == "install" ]; then
+	cd "$proj/src" 2> /dev/null;
+	make install
+	cd -
+fi

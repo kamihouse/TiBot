@@ -1,0 +1,42 @@
+#!/bin/bash
+
+cmd=$1
+akk=$2
+
+NetInterface(){
+	local cmd
+
+    if [[ ${1:-} == -w ]]; then
+        cmd="iwconfig"
+    elif [[ ${1:-} == -a ]]; then
+        cmd="ifconfig"
+    else
+        cmd="ifconfig -a"
+    fi
+
+	$cmd | awk '/^[^ \t]/ { print $1 }';
+}
+
+
+if [ "$cmd" == "cget" ]; then
+	ref=$(tiobj geturl ".");
+	aux="";
+	IFS='/';
+	for i in $ref; do
+		aux=$aux'/'$i;
+		class=$(tifolder getclass "$aux");
+		if [ $class == "$akk" ]; then
+			echo "$aux";
+			break;
+		fi
+	done
+elif [ "$cmd" == "get" ]; then
+	if [ "$akk" == "User" ]; then
+		cat /etc/passwd | cut -d':' -f1;
+	elif [ "$akk" == "NetInterface" ]; then
+		NetInterface;
+	elif [ "$akk" == "Class" ]; then
+		echo "User"
+		echo "NetInterface"
+	fi
+fi

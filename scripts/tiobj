@@ -1,0 +1,22 @@
+#!/bin/bash
+
+cmd=$1;
+obj=$2;
+
+if [ "$cmd" == "geturl" ]; then
+	readlink -f $obj;
+elif [ "$cmd" == "getpath" ]; then
+	echo "aaa";
+elif [ "$cmd" == "getname" ]; then
+	basename $obj;
+elif [ "$cmd" == "getclass" ]; then
+	file --mime-type $obj | tr -d " " | cut -d ":" -f2;
+elif [ "$cmd" == "getperm" ]; then
+	echo "aaa";
+elif [ "$cmd" == "getcmd" ]; then
+	echo "geturl";
+	echo "getpath";
+	echo "getname";
+	echo "getclass";
+	echo "getperm";
+fi

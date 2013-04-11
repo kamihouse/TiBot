@@ -1,0 +1,94 @@
+Preposition an;
+Preposition auf;
+Preposition aus;
+Preposition in;
+Preposition im;
+Preposition hinter;
+Preposition uber;
+Preposition unter;
+Preposition von;
+
+Pronoun ich;
+Pronoun du;
+Pronoun er;
+Pronoun sie;
+Pronoun ihr;
+
+
+
+Noun mann {
+	qtde = singular;
+	genero = masculino;
+}
+
+Noun frau {
+	qtde = singular;
+	genero = feminino;
+}
+
+Noun körper {
+	qtde = singular;
+	genero = masculino;
+}
+
+Noun berne {
+	qtde = singular;
+	genero = masculino;
+}
+
+Noun wasser {
+	qtde = singular;
+	genero = masculino;
+}
+
+Noun erde {
+	qtde = singular;
+	genero = masculino;
+}
+
+Noun tier {
+	qtde = singular;
+	genero = masculino;
+}
+
+Noun tiere {
+	qtde = plural;
+	genero = masculino;
+}
+
+Noun Löwe {
+	qtde = singular;
+	genero = masculino;
+}
+
+Adjectiv gut {
+	qtde = singular;
+	genero = feminino;	
+}
+
+Adjectiv schlecht {
+	qtde = singular;
+	genero = feminino;	
+}
+
+Adjectiv lang {
+	qtde = singular;
+	genero = feminino;	
+}
+
+Verb haben;
+Verb sein;
+
+Verb sehen;
+Verb hören;
+
+Verb kaufen;
+
+Verb gehen;
+
+Verb arbeit;
+Verb machen;
+
+
+
+

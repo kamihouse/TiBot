@@ -1,0 +1,23 @@
+#!/bin/bash
+
+_ti(){
+	prev=$3;
+	cur=$2;
+	#echo $COMP_LINE;
+	if [[ "$prev" == @("cget"|"get") ]]; then
+		classes=$(ti get Class);
+		COMPREPLY=($(compgen -W "$classes" "$cur"));
+	elif [ "$prev" == "ti" ]; then
+		COMPREPLY=($(compgen -W "cget get" "$cur"));
+		#COMPREPLY=$(compgen -W "cget get" "$cur");
+	fi
+} && complete -F _ti ti
+
+
+_tiproj(){
+	prev=$3;
+	cur=$2;
+	COMPREPLY=($(compgen -W "make install exec" "$cur"));
+} && complete -F _tiproj tiproj
+
+

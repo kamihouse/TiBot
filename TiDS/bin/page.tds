@@ -1,0 +1,8 @@
+Page {
+	Teste {
+		image = capa.jpg;	
+	}
+	Teste2 {
+		aaa= aaa;
+	}	
+}

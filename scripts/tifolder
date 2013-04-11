@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cmd=$1;
+obj=$2;
+
+if [ "$cmd" == "geturl" ]; then
+	readlink -f $obj;
+elif [ "$cmd" == "getpath" ]; then
+	echo "aaa";
+elif [ "$cmd" == "getname" ]; then
+	basename $obj;
+elif [ "$cmd" == "getclass" ]; then
+	if [ -e "$obj/.tiobj.xml" ]; then
+		xmlread "$obj/.tiobj.xml" "/tiobj/class";
+	else
+		echo "Folder";
+	fi	
+fi
+
